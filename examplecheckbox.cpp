@@ -22,21 +22,21 @@ void ExampleCheckBox::rajzol()
     //gout << move_to(_x+_size_x, _y) << color(0,0,0) << box(_size_x, _size_y)<< move_to(_x+_size_x+4, _y+4) << color(200,200,200) << box(_size_x-8, _size_y-8);
     if (_checked)
     {
-        gout << color(255,255,255);
-        gout << move_to(_x+t*_size_x+4, _y+g*_size_y+4) << line(_size_x-8, _size_y-8);
-        gout << move_to(_x+t*_size_x+4, _y+g*_size_y+4) << line(_size_x-8, _size_y-8);
-        gout << move_to(_x+t*_size_x+_size_x-4, _y+g*_size_y+4) << line(-_size_x+8, _size_y-8);
-        gout << move_to(_x+t*_size_x+_size_x-5, _y+g*_size_y+4) << line(-_size_x+8, _size_y-8);
+        gout << color(0,0,0);
+        gout << move_to(_x+t*_size_x+4+_size_x, _y+g*_size_y+4+_size_y) << line(_size_x-8, _size_y-8);
+        gout << move_to(_x+t*_size_x+4+_size_x, _y+g*_size_y+4+_size_y) << line(_size_x-8, _size_y-8);
+        gout << move_to(_x+t*_size_x+_size_x-4+_size_x, _y+g*_size_y+4+_size_y) << line(-_size_x+8, _size_y-8);
+        gout << move_to(_x+t*_size_x+_size_x-5+_size_x, _y+g*_size_y+4+_size_y) << line(-_size_x+8, _size_y-8);
     }
     if(che)
     {
-        gout <<color(255,255,255) << move_to(t*_size_x/2,g*_size_y/2);
+        gout <<color(0,0,0) << move_to(t*_size_x+_size_x,g*_size_y+_size_y);
                 for (double i = 0; i < 360 ; i+=0.1)
         {
             double alpha = i/180*pi;
             int yy = 12*sin(alpha);
             int xx = 12*cos(alpha);
-            gout << move_to(xx+t*_size_x-2,yy+g*_size_y-2) << dot << move_to(t*_size_x/2,g*_size_y/2);
+            gout << move_to(xx+t*_size_x-2,yy+g*_size_y-2) << dot << move_to(t*_size_x+_size_x,g*_size_y+_size_y);
         }
     }
 }
