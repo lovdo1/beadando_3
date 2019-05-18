@@ -8,10 +8,25 @@ ExampleCheckBox::ExampleCheckBox(int x, int y, int sx, int sy)
 {
     _checked=false;
     che=false;
+
+//    for(int i=0; i<14;i++ )
+//    {
+//
+//    }
+//
+//
+//    for(int i=0;i<d.size(15)-1;i++){
+//        for(int j=0;j<b.size(15)-1;j++)
+//        {
+//
+//        }
 }
+
 
 void ExampleCheckBox::rajzol()
 {
+
+
     gout <<color(255,255,255) << move_to(0,0) << box(500,500);
     for(int j=0;j<15;j++){
     for(int i=0;i<15;i++){
@@ -19,15 +34,24 @@ void ExampleCheckBox::rajzol()
     }
 
     }
+//    q = _x+t*_size_x+_size_x;
+//    w = _y+g*_size_y+_size_y;
     //gout << move_to(_x+_size_x, _y) << color(0,0,0) << box(_size_x, _size_y)<< move_to(_x+_size_x+4, _y+4) << color(200,200,200) << box(_size_x-8, _size_y-8);
+
+//    if(katt)
+//    {
+//
+//    }
     if (_checked)
     {
+
         gout << color(0,0,0);
-        gout << move_to(_x+t*_size_x+4+_size_x, _y+g*_size_y+4+_size_y) << line(_size_x-8, _size_y-8);
-        gout << move_to(_x+t*_size_x+4+_size_x, _y+g*_size_y+4+_size_y) << line(_size_x-8, _size_y-8);
-        gout << move_to(_x+t*_size_x+_size_x-4+_size_x, _y+g*_size_y+4+_size_y) << line(-_size_x+8, _size_y-8);
-        gout << move_to(_x+t*_size_x+_size_x-5+_size_x, _y+g*_size_y+4+_size_y) << line(-_size_x+8, _size_y-8);
+        gout << move_to(_x+t*_size_x+_size_x+4, _y+g*_size_y+_size_y+4) << line(_size_x-8, _size_y-8);
+        gout << move_to(_x+t*_size_x+_size_x+4, _y+g*_size_y+_size_y+4) << line(_size_x-8, _size_y-8);
+        gout << move_to(_x+t*_size_x+_size_x-4+_size_x, _y+g*_size_y+_size_y+4) << line(-_size_x+8, _size_y-8);
+        gout << move_to(_x+t*_size_x+_size_x-5+_size_x, _y+g*_size_y+_size_y+4) << line(-_size_x+8, _size_y-8);
     }
+
     if(che)
     {
         gout <<color(0,0,0) << move_to(t*_size_x+_size_x,g*_size_y+_size_y);
@@ -43,20 +67,30 @@ void ExampleCheckBox::rajzol()
 
 void ExampleCheckBox::handle(event ev)
 {
-    if (ev.type == ev_key && (ev.keycode == key_enter || ev.keycode == ' ')) {
-            _checked = !_checked;
-    }
-    if (ev.type == ev_mouse && is_selected(ev.pos_x, ev.pos_y) && ev.button==btn_left) {
-        a++;
-        if(a%2)
+//    if (ev.type == ev_key && (ev.keycode == key_enter || ev.keycode == ' ')) {
+//            _checked = !_checked;
+//    }
+//    if(katt=false)
+//    {
+//        q=ev.pos_x;
+//        w=ev.pos_y;
+//        //katt = true;
+//    }
+   // else if(katt == true)
+
+    if (ev.type == ev_mouse && is_selected(ev.pos_x, ev.pos_y) && ev.button==btn_left && ev.button>0) {
+       // a++;
+        if(akar==false)
         {
            _checked = true;
+           akar=true;
 
         }
-        else
+        else if(akar==true)
         {
 
             che = true;
+            akar=false;
         }
 
     }

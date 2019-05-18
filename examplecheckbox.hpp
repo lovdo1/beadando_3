@@ -7,8 +7,9 @@
 
 class ExampleCheckBox : public Widget {
 protected:
-    bool _checked, che;
-    int a=0;
+    bool _checked, che, akar;
+    //int a=0;
+    int q,w,e,r;
     const double pi = 3.1415926;
 public:
     ExampleCheckBox(int x, int y, int sx, int sy);
