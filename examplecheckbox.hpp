@@ -3,10 +3,13 @@
 
 #include "graphics.hpp"
 #include "widgets.hpp"
+#include <cmath>
 
 class ExampleCheckBox : public Widget {
 protected:
-    bool _checked;
+    bool _checked, che;
+    int a=0;
+    const double pi = 3.1415926;
 public:
     ExampleCheckBox(int x, int y, int sx, int sy);
     virtual void rajzol() ;

@@ -36,7 +36,7 @@ void Ablak::event_loop(std::vector<Widget*> widgets)
 
 void Ablak::rajzol()
 {
-    gout.open(1000,1000);
+    gout.open(500,500);
 
     for(Widget *d:k)
     {
