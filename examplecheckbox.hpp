@@ -13,10 +13,12 @@ protected:
     int q,w,e,r;
 //    std::vector<int> alma;
 //    std::vector<int> fa;
-    int palya[15][15];
+
 
     const double pi = 3.1415926;
 public:
+    int palya[15][15];
+    //int **palya=new int*[d];
     ExampleCheckBox(int x, int y, int sx, int sy);
     virtual void rajzol() ;
     virtual void handle(genv::event ev);
