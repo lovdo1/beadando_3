@@ -4,12 +4,16 @@
 #include "graphics.hpp"
 #include "widgets.hpp"
 #include <cmath>
+#include <vector>
 
 class ExampleCheckBox : public Widget {
 protected:
     bool _checked, che, akar, katt, kattint;
-    int a=0;
+    int i,f, a=0;
     int q,w,e,r;
+//    std::vector<int> alma;
+//    std::vector<int> fa;
+    int palya[15][15];
 
     const double pi = 3.1415926;
 public:
