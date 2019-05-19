@@ -5,6 +5,8 @@
 #include "examplecheckbox.hpp"
 #include <vector>
 
+
+
 class Ablak: public Widget
 {
 protected:

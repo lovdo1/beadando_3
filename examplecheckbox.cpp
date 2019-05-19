@@ -11,27 +11,22 @@ ExampleCheckBox::ExampleCheckBox(int x, int y, int sx, int sy)
     _checked=false;
     che=false;
 
-//for(int i=0;i<14;i++)
-//{
-//    palya[i]=new int[15];
-//}
-
-
 
     for(int i=0;i<14;i++){
         for(int j=0;j<14;j++)
         {
             palya[i][j]=0;
-            std::cout << palya[i][j] <<"\n";
+            std::cout << palya[i][j];
 
         }
+        std::cout<< std::endl;
 }
 
 }
 void ExampleCheckBox::rajzol()
 {
 
-//gout <<color(255,255,255) << move_to(0,0) << box(500,500);
+
     for(int j=0;j<15;j++){
     for(int i=0;i<15;i++){
     if(palya[i][j]==0){
@@ -91,14 +86,6 @@ void ExampleCheckBox::handle(event ev)
 
 
         katt=false;
-       // i++;
-//        for(int i=0;i<alma.size()-1;i++){
-//          for(int j=0;j<alma.size()-1;j++){
-//            std::vector<int> row;
-//            row.
-//          }
-//        }
-//        alma.push_back[i][j];
 
     }
 
@@ -123,6 +110,21 @@ void ExampleCheckBox::handle(event ev)
 
     }
 
+    for(int i=0;i<10;i++)
+    {
+        for(int j=0;j<10;j++)
+        {
+            std::cout << palya[i][j];
+            if(palya[i][j]==palya[i+1][j] && palya[i][j]==palya[i+2][j] &&palya[i][j]==palya[i+3][j] &&palya[i][j]==palya[i+4][j] && palya[i][j]>0)
+            {
+                std::cout << "Nyert";
+            }
+            if(palya[i][j]==palya[i][j+1] && palya[i][j]==palya[i][j+2] &&palya[i][j]==palya[i][j+3] &&palya[i][j]==palya[i][j+4] && palya[i][j]>0){
+                    std::cout << "Nyert";
+        }
+        }
+        std::cout<< std::endl;
+    }
 
 
 }

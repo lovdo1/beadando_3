@@ -27,16 +27,6 @@ void Ablak::event_loop(std::vector<Widget*> widgets)
         if (focus!=-1) {
             widgets[focus]->handle(ev);
         }
-//        if (ev.type == ev_mouse && ev.button==btn_left)
-//         {
-//             kattint = true;
-//             katt = true;
-//         }
-//         else
-//         {
-//             kattint = false;
-//             katt = false;
-//         }
         for (Widget * w : widgets) {
             w->rajzol();
         }

@@ -3,8 +3,6 @@
 //#include "examplecheckbox.hpp"
 #include "ablak.hpp"
 //#include <vector>
-using namespace std;
-using namespace genv;
 
 
 
