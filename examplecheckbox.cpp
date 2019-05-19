@@ -11,6 +11,7 @@ ExampleCheckBox::ExampleCheckBox(int x, int y, int sx, int sy)
 
 //    for(int i=0; i<14;i++ )
 //    {
+//        Ablak[i] = new Ablak
 //
 //    }
 //
@@ -34,6 +35,7 @@ void ExampleCheckBox::rajzol()
     }
 
     }
+
 //    q = _x+t*_size_x+_size_x;
 //    w = _y+g*_size_y+_size_y;
     //gout << move_to(_x+_size_x, _y) << color(0,0,0) << box(_size_x, _size_y)<< move_to(_x+_size_x+4, _y+4) << color(200,200,200) << box(_size_x-8, _size_y-8);
@@ -54,43 +56,70 @@ void ExampleCheckBox::rajzol()
 
     if(che)
     {
-        gout <<color(0,0,0) << move_to(t*_size_x+_size_x,g*_size_y+_size_y);
+        gout <<color(0,0,0) << move_to(t*_size_x+3*_size_x,g*_size_y+3*_size_y);
                 for (double i = 0; i < 360 ; i+=0.1)
         {
             double alpha = i/180*pi;
             int yy = 12*sin(alpha);
             int xx = 12*cos(alpha);
-            gout << move_to(xx+t*_size_x-2,yy+g*_size_y-2) << dot << move_to(t*_size_x+_size_x,g*_size_y+_size_y);
+            gout << move_to(xx+t*_size_x-2+2*_size_x,yy+g*_size_y-2+2*_size_y) << dot << move_to(t*_size_x+3*_size_x,g*_size_y+3*_size_y);
         }
     }
 }
 
 void ExampleCheckBox::handle(event ev)
 {
-//    if (ev.type == ev_key && (ev.keycode == key_enter || ev.keycode == ' ')) {
-//            _checked = !_checked;
+//    if (ev.button==btn_left&& katt==false){
+//
+//
+//    q=ev.pos_x;
+//    w=ev.pos_y;
+//    katt=true;
+//
+//
 //    }
-//    if(katt=false)
-//    {
-//        q=ev.pos_x;
-//        w=ev.pos_y;
-//        //katt = true;
+//    else if(ev.button==btn_left&& katt==true){
+//        e=ev.pos_x;
+//        r=ev.pos_y;
+//        katt=false;
+//
 //    }
-   // else if(katt == true)
 
-    if (ev.type == ev_mouse && is_selected(ev.pos_x, ev.pos_y) && ev.button==btn_left && ev.button>0) {
-       // a++;
-        if(akar==false)
+
+    if (ev.type == ev_mouse /*&& is_selected(ev.pos_x,ev.pos_y) */&& ev.button==btn_left) {
+            if (ev.button==btn_left&& katt==false){
+
+
+    q=ev.pos_x;
+    w=ev.pos_y;
+    katt=true;
+
+
+    }
+    else if(ev.button==btn_left&& katt==true){
+        e=ev.pos_x;
+        r=ev.pos_y;
+        katt=false;
+
+    }
+
+
+        a++;
+        if(a%2 && is_selected(q,w))
         {
            _checked = true;
-           akar=true;
+           che=false;
+
 
         }
-        else if(akar==true)
+        else if(is_selected(e,r))
         {
 
+
             che = true;
-            akar=false;
+            _checked=false;
+
+
         }
 
     }

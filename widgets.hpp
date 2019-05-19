@@ -7,7 +7,7 @@
 class Widget {
 protected:
     int _x, _y, _size_x, _size_y, g, t;
-    bool kattint, katt = false;
+    //bool kattint, katt = false;
 //    vector<int> d;
 //    vector<int> b;
 public:
